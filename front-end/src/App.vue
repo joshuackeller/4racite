@@ -32,12 +32,12 @@
     </li>
     <li class="navItem active">
       <router-link to="/FAQ">
-      <a class="navLink" href="../FAQ/faq.html">Runners <span class="sr-only">(current)</span></a>
+      <a class="navLink" href="../FAQ/faq.html">Add a Runner<span class="sr-only">(current)</span></a>
       </router-link>
     </li>
     <li class="navItem active">
       <router-link to="/Rankings">
-      <a class="navLink" href="../Rankings/rankings.html">Rankings <span class="sr-only">(current)</span></a>
+      <a class="navLink" href="../Rankings/rankings.html">Runners<span class="sr-only">(current)</span></a>
       </router-link>
     </li>
   </ul>
@@ -47,6 +47,7 @@
 </div>
 <router-view />
   <footer class="page-footer text-center py-3">This is a link to my githup repository: <a class="link" href="https://github.com/joshuackeller/4racite.git">https://github.com/joshuackeller/4racite.git</a></footer>
+  
 </div>
 </template>
 
@@ -94,7 +95,7 @@ body {
   color: #8656df!important;
 }
 #home_link {
-    width: 230px;
+    width: 2px;
     margin-top: 30px;
     font-family: "ChunkFive-Regular"!important;
     font-size: 400%;

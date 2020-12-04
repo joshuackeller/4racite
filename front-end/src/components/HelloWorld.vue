@@ -8,6 +8,10 @@
       <h5>{{race.name}}</h5>
       <p>{{race.date}}</p>
       <button v-on:click="addToFavs(race)" class="auto">Add to Favorites</button>
+      <router-link to=/wser>
+      <a class="navLink" href="../Rankings/rankings.html">See Race Page ><span class="sr-only">(current)</span></a>
+      </router-link><p></p>
+      <p></p>
     </div>
   </div>
 </div>
@@ -43,6 +47,7 @@ button {
 
 .auto {
   margin-left: auto;
+  margin-right: 35px;
 }
 .wrapper {
   display: flex;

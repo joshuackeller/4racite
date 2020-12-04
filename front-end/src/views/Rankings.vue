@@ -2,7 +2,7 @@
 <div class="FAQ">
 <div class="about_wrap">
     <div class="about_con">
-      <h1 class="about_header">Runner Rankings</h1>
+      <h1 class="about_header">Featured Runners</h1>
     </div>
   </div>
 
@@ -13,6 +13,8 @@
         <img :src="item.path" />
         <p>Age: {{item.age}}</p>
         <p>Recent Races Won: {{item.won}}</p>
+        <p>
+        </p>
       </div>
     </section>
   </div>
@@ -49,6 +51,9 @@ export default {
 </script>
 
 <style scoped>
+.image-gallery {
+  margin-left: 5%;
+}
 .image img{
   max-height: 200px;
 }

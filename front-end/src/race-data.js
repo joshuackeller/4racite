@@ -4,9 +4,10 @@ let mock = [{
     date: "June 26-27, 2021",
     location: "Olympic Valley, CA",
     image: 'west.png',
-    fav: false
+    fav: false,
+    link: "/wser",
   },
-  {
+  /*{
     id: 1,
     name: "UTMB",
     date: "August 23, 2021",
@@ -60,7 +61,7 @@ let mock = [{
     location: "Logan, UT",
     image: "tou.jpg",
     fav: false
-  }
+  }*/
 ]
 
 export default mock;

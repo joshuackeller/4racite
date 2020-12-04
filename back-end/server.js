@@ -44,7 +44,7 @@ app.post('/api/photos', upload.single('photo'), async (req, res) => {
   });
 });
 
-// Create a new item in the museum: takes a title and a path to an image.
+// Create a new item in the : takes a title and a path to an image.
 app.post('/api/items', async (req, res) => {
   const item = new Item({
     name: req.body.name,
@@ -100,6 +100,74 @@ app.put('/api/items/:id', async (req, res) => {
     res.sendStatus(500);
   }
 });
+
+
+
+const cItemSchema = new mongoose.Schema({
+  cname: String,
+  comment: String,
+  time: String,
+});
+
+// Create a model for items in the museum.
+const cItem = mongoose.model('cItem', cItemSchema);
+
+app.post('/api/comments', async (req, res) => {
+  const citem = new cItem({
+    cname: req.body.cname,
+    comment: req.body.comment,
+    time: req.body.time,
+  });
+  try {
+    await citem.save();
+    res.send(citem);
+    console.log(citem)
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
+app.get('/api/comments', async (req, res) => {
+  try {
+    let citems = await cItem.find();
+    res.send(citems);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
+app.delete('/api/comments/:id', async (req, res) => {
+  try {
+    await cItem.deleteOne({
+      _id: req.params.id
+    });
+    res.sendStatus(200);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
+app.put('/api/comments/:id', async (req, res) => {
+  try {
+    const citem = cItem.findOne({
+      _id: req.params.id
+    });
+    await citem.updateOne({
+      cname: req.body.cname,
+      comment: req.body.comment,
+    });
+    res.sendStatus(200);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
+
+
 
 
 app.listen(3000, () => console.log('Server listening on port 3000!'));
