@@ -17,7 +17,7 @@
   <ul class="navBar">
     <li class="navItem">
       <router-link to="/">
-        <a class="navLink">Home <span class="sr-only">(current)</span></a>
+        <a class="navLink">Home Page <span class="sr-only">(current)</span></a>
       </router-link>
     </li>
     <li class="navItem active">
